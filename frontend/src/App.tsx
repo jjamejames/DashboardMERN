@@ -69,7 +69,7 @@ function App() {
 
       if (profileObj) {
         ///////////////////////////////////// ทำการ connect กับ backend โดยเมื่อทำการ log in ให้ทำการ post user ลงใน database
-        const response = await fetch("http://localhost:8080/api/v1/users", {
+        const response = await fetch("https://dashboardmern-1rci.onrender.com/api/v1/users", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -165,7 +165,7 @@ function App() {
           <RefineSnackbarProvider>
             <DevtoolsProvider>
               <Refine
-                dataProvider={dataProvider("http://localhost:8080/api/v1")} //refine จะ map resource name (เช่น "Properties") เป็น path เล็ก (/properties) ต่อท้าย base URL ที่ตั้งใน dataProvideraction ที่ใช้ (list, create, show, edit) จะกำหนด method (GET, POST, PUT, DELETE) และ endpoint ให้อัตโนมัติ
+                dataProvider={dataProvider("https://dashboardmern-1rci.onrender.com/api/v1")} //refine จะ map resource name (เช่น "Properties") เป็น path เล็ก (/properties) ต่อท้าย base URL ที่ตั้งใน dataProvideraction ที่ใช้ (list, create, show, edit) จะกำหนด method (GET, POST, PUT, DELETE) และ endpoint ให้อัตโนมัติ
                 notificationProvider={useNotificationProvider}
                 routerProvider={routerBindings}
                 authProvider={authProvider}
